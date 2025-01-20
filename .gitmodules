@@ -1,3 +1,4 @@
 [submodule "DAY00"]
 	path = DAY00
-	url = https://github.com/NourMellal/DAY00.git
+	url = git@github.com:NourMellal/DAY00.git
+	branch = main
