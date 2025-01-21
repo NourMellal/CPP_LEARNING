@@ -9,12 +9,13 @@ git submodule foreach --recursive '
   echo "Entering submodule: $name"
   branch=$(git symbolic-ref --short HEAD || echo "detached")
   if [ "$branch" = "detached" ]; then
-    echo "Submodule $name is in a detached HEAD state. Please fix manually."
-    exit 1
+    echo "Submodule $name is in a detached HEAD state. Attempting to fix..."
+    git checkout main
+    git pull origin main
   fi
   git add .
   git commit -m "Update in submodule: $name" || echo "No changes to commit in $name."
-  git push origin $branch
+  git push origin $(git symbolic-ref --short HEAD)
 '
 
 # Go back to the root of the parent repository
