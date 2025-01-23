@@ -2,3 +2,6 @@
 	path = DAY00
 	url = git@github.com:NourMellal/DAY00.git
 	branch = main
+[submodule "DAY01"]
+	path = DAY01
+	url = git@github.com:NourMellal/DAY01.git
