@@ -1,14 +1,9 @@
 #include <iostream>
 #include <ctime>
 
-class Point {
-
-public:
-    Point()
-};
-
-int main(int argc, char const *argv[])
+int main( void )
 {
-    displayTimestamp();
+    float f = 10;
+    std::cout << std::setp << f << std::endl;
     return 0;
 }
