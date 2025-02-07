@@ -7,6 +7,11 @@ set -e
 echo "Pulling changes for the parent repository..."
 git pull
 
+# Add the new submodule DAY03
+echo "Adding new submodule DAY03..."
+git submodule add git@github.com:NourMellal/DAY03.git DAY03
+git submodule update --init --recursive
+
 # Check if submodules need to be initialized
 echo "Checking and initializing submodules..."
 git submodule update --init --recursive
@@ -40,4 +45,4 @@ git submodule foreach --recursive '
 echo "Updating submodule references in the parent repository..."
 git submodule update --init --recursive
 
-echo "All submodules and the parent repository are up to date!"
+echo "All submodules (including DAY03) and the parent repository are up to date!"
