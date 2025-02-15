@@ -1,0 +1,24 @@
+# Compiler and flags
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+# Files 
+SRCS = main.cpp Fixed.cpp ArithmeticOp.cpp Comparison.cpp IncDec.cpp MinMax.cpp Point.cpp bsp.cpp
+OBJS = $(SRCS:.cpp=.o)
+NAME = Fixed
+
+# Rules
+all: $(NAME)
+
+$(NAME): $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+clean:
+		rm -f $(OBJS)
+
+fclean: clean
+		rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
