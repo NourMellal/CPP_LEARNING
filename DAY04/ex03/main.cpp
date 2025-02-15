@@ -10,9 +10,13 @@ int main(void)
 
     std::cout << "Subject Test " << std::endl;
     {
+
         IMateriaSource *src = new MateriaSource();
-        src->learnMateria(new Ice());
-        src->learnMateria(new Cure());
+        Ice *ice = new Ice();
+        Cure *cure = new Cure();
+        src->learnMateria(ice);
+        src->learnMateria(cure);
+
         ICharacter *me = new Character("me");
         AMateria *tmp;
         tmp = src->createMateria("ice");
@@ -22,6 +26,8 @@ int main(void)
         ICharacter *bob = new Character("bob");
         me->use(0, *bob);
         me->use(1, *bob);
+
+        delete ice, delete cure;
         delete bob;
         delete me;
         delete src;
@@ -33,16 +39,19 @@ int main(void)
         AMateria *materias[materias_count];
         MateriaSource *src = new MateriaSource();
 
+        Ice *ice = new Ice();
+        Cure *cure = new Cure();
         ICharacter *me = new Character("me");
         ICharacter *bob = new Character("bob");
         std::cout << "[ learning materias with src]" << '\n';
         for (size_t i = 0; i < materias_count; i++)
         {
             if (i % 2)
-                src->learnMateria(new Cure());
+                src->learnMateria(cure);
             else
-                src->learnMateria(new Ice());
+                src->learnMateria(ice);
         }
+        delete ice, delete cure;
 
         std::cout << "[ Creating materias with src]" << '\n';
         for (size_t i = 0; i < materias_count; i++)

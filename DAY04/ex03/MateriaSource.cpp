@@ -33,12 +33,10 @@ void MateriaSource::learnMateria(AMateria* m)
     for (int i = 0; i < 4; i++) {
         if (!materias[i]) {
             std::cout << "Learned a materia type " << m->getType() << '\n';
-            materias[i] = m;
+            materias[i] = m->clone();
             return ;
         }
     }
-    if (m)
-        delete m;
     std::cerr << "No more free slots in Inventory to learn a new materia" << std::endl; 
 }
 
