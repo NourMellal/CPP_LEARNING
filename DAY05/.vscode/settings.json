@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "compare": "cpp",
+        "memory_resource": "cpp",
+        "type_traits": "cpp"
+    }
+}
