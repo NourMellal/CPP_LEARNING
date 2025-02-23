@@ -40,6 +40,7 @@ public:
     Form(const Form& rhs);
     Form &operator=(const Form& rhs);
     ~Form();
+    Form( void );
 
     std::string getName() const;
     uint getExecGrade() const;

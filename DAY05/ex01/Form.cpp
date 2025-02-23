@@ -16,6 +16,8 @@ const char *Form::EmptyNameException::what() const throw()
     return "EmptyNameException";
 }
 
+Form::Form( void ) : _name("Default"), _grade_to_exec(150), _grade_to_sign(150), _is_signed(false) {}
+
 Form::Form(const std::string name, const uint grade_to_exec, const uint grade_to_sign) : _name(name), _grade_to_exec(grade_to_exec), _grade_to_sign(grade_to_sign), _is_signed(false)
 {
     if (name.empty())
