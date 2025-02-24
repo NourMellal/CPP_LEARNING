@@ -8,7 +8,7 @@ int main(void)
     }
     catch (std::exception &e)
     {
-        std::cout << e.what();
+        std::cerr << e.what();
     }
     try
     {
@@ -16,7 +16,7 @@ int main(void)
     }
     catch (std::exception &e)
     {
-        std::cout << e.what();
+        std::cerr << e.what();
     }
 
     Bureaucrat *me;
@@ -26,7 +26,7 @@ int main(void)
     }
     catch (std::exception &e)
     {
-        std::cout << e.what();
+        std::cerr << e.what();
     }
     std::cout << *me;
     delete me;

@@ -12,7 +12,7 @@ int main(void)
         std::cout << a;
         std::cout << af;
     } catch (std::exception &e) {
-        std::cout << "main catched : " << e.what() << "\n";
+        std::cerr << "main catched : " << e.what() << "\n";
     }
 
     std::cout << "\n\n===========================\n\n";
@@ -25,7 +25,7 @@ int main(void)
     std::cout << b;
     std::cout << bf;
     } catch (std::exception &e) {
-        std::cout << "main catched : " << e.what() << "\n";
+        std::cerr << "main catched : " << e.what() << "\n";
     }
     return (0);
 }

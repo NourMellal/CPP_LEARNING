@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
@@ -81,6 +81,16 @@ void Bureaucrat::signForm(Form &form)
     catch (std::exception &e)
     {
         std::cerr << this->_name << " cannot sign " << form.getName() << " because: " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::exec_form(Form &form)
+{
+    try {
+        form.beExecuted(*this);
+        std::cout << "Form : " << form << " is executed by " << *this << "\n";
+    } catch (std::exception &e) {
+        std::cerr << "Form " << form.getName() << " did not executed because of " << e.what() << "\n";
     }
 }
 
