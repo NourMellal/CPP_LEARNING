@@ -36,6 +36,7 @@ void identify(Base& p)
 
 Base* generate(void)
 {
+    srand(time(0));
     int n = rand() % 3;
     std::cout << n << std::endl;
     

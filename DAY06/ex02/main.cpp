@@ -1,10 +1,7 @@
 #include "Base.hpp"
 
 int main()
-{
-    // Initialize random seed once at program start
-    srand(time(0));
-    
+{    
     while (1)
     {
         Base* base = generate();
